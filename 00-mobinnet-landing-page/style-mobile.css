@@ -1,0 +1,161 @@
+@media (max-width: 1060px) {
+    .mobile-menu-container {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        left: 2vw;
+        width: 4vmin;
+        height: 100%;
+    }
+
+    .top-navbar {
+        background-color: #262626;
+        padding: 1vh 0;
+
+    }
+
+    .bottom-navbar {
+        padding: 3vh 0;
+        background-color: #111;
+    }
+
+    .lang {
+        display: none;
+    }
+
+    .navbar-wrapper-top {
+        width: 95%;
+    }
+
+    .navbar-wrapper-bottom {
+        display: none;
+    }
+
+
+}
+
+@media (max-width: 882px) {
+    .section1 {
+        flex-direction: column;
+    }
+
+    .s1-left {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .s1-left-container {
+        width: 70%;
+        margin: 0;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .s1-right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .s1-img {
+        width: 45vw;
+        object-fit: contain;
+    }
+
+    .product-container-r,
+    .product-container-l {
+        margin: 10vh 0;
+    }
+
+    p,
+    span,
+    h1 {
+        text-align: center !important;
+    }
+
+    .price-info,
+    .price-value {
+        text-align: center;
+    }
+}
+
+@media (max-width: 740px) {
+
+
+    .navbar-wrapper-top {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .right {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .left {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    .nav-item>.icon {
+        width: 40px;
+        margin-left: 5px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main-image {
+        height: 250px;
+        object-fit: cover;
+    }
+
+    .s1-left-items {
+        flex-direction: column;
+    }
+
+    .s1-left-item {
+        margin: 1vh 0;
+        width: 100%;
+    }
+
+    .s1-button {
+        font-size: 12px;
+        min-width: unset;
+        width: 31vw;
+    }
+
+    .products {
+        flex-direction: column;
+    }
+
+    .price-value {
+        font-size: 23px;
+    }
+
+    .product-item-l,
+    .product-item-r {
+        width: 100%;
+    }
+
+    .footer-container {
+        flex-direction: column;
+    }
+
+    .s1-title {
+        font-size: 27px;
+    }
+
+    .s1-text {
+        font-size: 18px;
+    }
+
+
+}

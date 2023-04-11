@@ -5,6 +5,11 @@
 
 * {
     font-family: 'iransans';
+
+}
+
+body {
+    background-color: #F2F2F2;
 }
 
 .bg-navbar {
@@ -27,9 +32,69 @@
     background-image: linear-gradient(108deg, #73bf43 0%, #00ad4c 100%);
 }
 
+.s1 {
+    width: clamp(750px, 60%, 1200px) !important;
+}
+
+.text-s1-intro {
+    color: #0C5750;
+}
+
+.text-s1-title {
+    color: #99CC00;
+}
+
+.text-s1-body {
+    color: #888888;
+}
+
+.flex-1 {
+    flex: 1 !important;
+}
+
+.btn-s1 {
+    background-color: #0c5753;
+    min-width: 160px !important;
+}
+
+.btn-prodcut {
+    min-width: 100px;
+}
+
+.bg-product-1 {
+    background-color: #A7CD39;
+}
+
+.bg-product-2 {
+    background-color: #01AC4E;
+}
+
+.text-price-info {
+    color: #0C5753;
+}
+
+.text-product-button {
+    color: #0C5753;
+}
+
+.text-footer {
+    color: #eee;
+}
+
+.text-footer-title {
+    color: #666;
+}
+
+.bg-footer {
+    background-color: #000 !important;
+}
 
 @media (max-width: 992px) {
     .nav-top-ul {
         width: 100%;
+    }
+
+    .s1-img {
+        margin-right: 0 !important;
     }
 }

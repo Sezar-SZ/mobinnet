@@ -1,0 +1,77 @@
+@font-face {
+    font-family: "iransans";
+    src: url("./iransansweb.woff");
+}
+
+* {
+    font-family: 'iransans';
+
+}
+
+body {
+    background-color: #cec;
+}
+
+#faqs-container {
+    margin: 0 auto;
+    margin-top: 20vh;
+    padding: 2vh 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.faq {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 90%;
+    max-width: 1200px;
+    margin-bottom: 4vh;
+}
+
+.question {
+    position: relative;
+    width: 100%;
+    padding: 2vh 2vw;
+    border: solid 1px gray;
+    border-radius: 2px;
+    background-color: #dfd;
+    cursor: pointer
+}
+
+.question-selected {
+    background-color: #ddf;
+}
+
+img {
+    width: 20px;
+    position: absolute;
+    left: 2vw;
+    transition: 200ms
+}
+
+.rotate {
+    transform: rotate(180deg);
+}
+
+.answer {
+    padding: 2vh 2vw;
+    width: 100%;
+    border: solid 1px gray;
+    border-radius: 2px;
+    background-color: #dfd;
+    border-top: none;
+    color: #444;
+
+}
+
+.collapse {
+    display: none;
+}
+
+.expand {
+    display: block;
+}

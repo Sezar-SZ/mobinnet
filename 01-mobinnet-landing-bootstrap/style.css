@@ -57,6 +57,10 @@ body {
     min-width: 160px !important;
 }
 
+.btn-s1:hover {
+    background-color: #4a4;
+}
+
 .btn-prodcut {
     min-width: 100px;
 }
@@ -87,6 +91,14 @@ body {
 
 .bg-footer {
     background-color: #000 !important;
+}
+
+.btn-modal {
+    background-color: #0c5753;
+}
+
+.btn-modal:hover {
+    background-color: #00ad4c;
 }
 
 @media (max-width: 992px) {

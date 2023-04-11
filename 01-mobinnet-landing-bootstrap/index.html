@@ -134,7 +134,7 @@
                     <ul class="navbar-nav justify-content-around">
                         <li class="nav-item">
                             <a
-                                class="nav-link d-flex justify-content-center align-items-center"
+                                class="nav-link d-flex justify-content-start align-items-center"
                                 href="#"
                             >
                                 <img
@@ -147,7 +147,7 @@
                         </li>
                         <li class="nav-item">
                             <a
-                                class="nav-link d-flex justify-content-center align-items-center"
+                                class="nav-link d-flex justify-content-start align-items-center"
                                 href="#"
                             >
                                 <img
@@ -160,7 +160,7 @@
                         </li>
                         <li class="nav-item">
                             <a
-                                class="nav-link d-flex justify-content-center align-items-center"
+                                class="nav-link d-flex justify-content-start align-items-center"
                                 href="#"
                             >
                                 <img
@@ -173,7 +173,7 @@
                         </li>
                         <li class="nav-item">
                             <a
-                                class="nav-link d-flex justify-content-center align-items-center"
+                                class="nav-link d-flex justify-content-start align-items-center"
                                 href="#"
                             >
                                 <img
@@ -186,7 +186,7 @@
                         </li>
                         <li class="nav-item">
                             <a
-                                class="nav-link d-flex justify-content-center align-items-center"
+                                class="nav-link d-flex justify-content-start align-items-center"
                                 href="#"
                             >
                                 <img
@@ -460,6 +460,8 @@
                                 src="https://mobinnet.ir/wp-content/uploads/2022/12/خبر.jpg"
                                 class="card-img-top"
                                 alt="..."
+                                data-bs-toggle="modal"
+                                data-bs-target="#tamdidModal"
                             />
                             <div class="card-body">
                                 <p class="card-text text-center text-s1-intro">
@@ -474,6 +476,8 @@
                                 src="https://mobinnet.ir/wp-content/uploads/2022/10/blog.png"
                                 class="card-img-top"
                                 alt="..."
+                                data-bs-toggle="modal"
+                                data-bs-target="#jashnvareModal"
                             />
                             <div class="card-body">
                                 <p
@@ -492,6 +496,8 @@
                                 src="https://mobinnet.ir/wp-content/uploads/2022/11/5.jpg"
                                 class="card-img-top"
                                 alt="..."
+                                data-bs-toggle="modal"
+                                data-bs-target="#noroozModal"
                             />
                             <div class="card-body">
                                 <p class="card-text text-center text-s1-intro">
@@ -502,6 +508,114 @@
                     </div>
                 </div>
             </section>
+
+            <!-- Modal 1 -->
+            <div
+                class="modal fade"
+                id="tamdidModal"
+                data-bs-backdrop="static"
+                data-bs-keyboard="false"
+                tabindex="-1"
+                aria-labelledby="staticBackdropLabel"
+                aria-hidden="true"
+            >
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header border-0">
+                            <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                            ></button>
+                        </div>
+                        <div class="modal-body" dir="rtl">
+                            سرویس تمدید خودکار اینترنت مبین‌نت فعال شد
+                        </div>
+                        <div class="modal-footer border-0">
+                            <button
+                                type="button"
+                                class="btn btn-modal text-white border-0"
+                                data-bs-dismiss="modal"
+                            >
+                                بستن
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal 2 -->
+            <div
+                class="modal fade"
+                id="jashnvareModal"
+                data-bs-backdrop="static"
+                data-bs-keyboard="false"
+                tabindex="-1"
+                aria-labelledby="staticBackdropLabel"
+                aria-hidden="true"
+            >
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header border-0">
+                            <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                            ></button>
+                        </div>
+                        <div class="modal-body" dir="rtl">
+                            سرویس تمدید خودکار اینترنت مبین‌نت فعال شد
+                        </div>
+                        <div class="modal-footer border-0">
+                            <button
+                                type="button"
+                                class="btn btn-modal text-white"
+                                data-bs-dismiss="modal"
+                            >
+                                بستن
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal 3 -->
+            <div
+                class="modal fade"
+                id="noroozModal"
+                data-bs-backdrop="static"
+                data-bs-keyboard="false"
+                tabindex="-1"
+                aria-labelledby="staticBackdropLabel"
+                aria-hidden="true"
+            >
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header border-0">
+                            <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                            ></button>
+                        </div>
+                        <div class="modal-body" dir="rtl">
+                            جشنواره تمدید نوروز
+                        </div>
+                        <div class="modal-footer border-0">
+                            <button
+                                type="button"
+                                class="btn btn-modal text-white"
+                                data-bs-dismiss="modal"
+                            >
+                                بستن
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <footer
                 class="d-flex flex-column flex-lg-row justify-content-start justify-content-lg-center align-items-center py-5 bg-footer"

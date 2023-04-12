@@ -1,5 +1,5 @@
 function faqHTML(id, question, answer) {
-    return `<div class="faq""> <div class="question"> <span>${question}</span> <img src="./down-arrow.svg"/> </div><div class="answer collapse"> <span>${answer}</span> </div></div>`;
+    return `<div class="faq""> <div class="question"> <span>${question}</span> <img src="./down-arrow.svg"/> </div><div class="answer"> <span>${answer}</span> </div></div>`;
 }
 
 async function fetchFAQS() {
@@ -18,16 +18,13 @@ faqs.forEach((faq) => {
 
 document.querySelectorAll(".question").forEach((question) => {
     question.addEventListener("click", (event) => {
-        const answer = question.parentElement.querySelector(".answer");
-        const img = question.parentElement.querySelector("img");
+        const faq = question.parentElement;
+        const answer = faq.querySelector(".answer");
 
-        if (answer.classList.contains("expand")) {
+        if (answer.classList.contains("expand")) closeAll();
+        else {
             closeAll();
-        } else {
-            closeAll();
-            answer.classList.add("expand");
-            question.classList.add("question-selected");
-            img.classList.add("rotate");
+            open(faq);
         }
     });
 });
@@ -38,9 +35,19 @@ function closeAll() {
         const answer = faq.querySelector(".answer");
         const question = faq.querySelector(".question");
         const img = faq.querySelector("img");
+
         answer.classList.remove("expand");
-        answer.classList.add("collapse");
         question.classList.remove("question-selected");
         img.classList.remove("rotate");
     });
+}
+
+function open(faq) {
+    const question = faq.querySelector(".question");
+    const answer = faq.querySelector(".answer");
+    const img = question.querySelector("img");
+
+    question.classList.add("question-selected");
+    answer.classList.add("expand");
+    img.classList.add("rotate");
 }

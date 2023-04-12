@@ -66,11 +66,8 @@ img {
     background-color: #dfd;
     border-top: none;
     color: #444;
-
-}
-
-.collapse {
     display: none;
+
 }
 
 .expand {

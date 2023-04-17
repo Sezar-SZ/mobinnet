@@ -1,6 +1,16 @@
 <template>
-	<div id="app">
-		<div class="cardsContainer"></div>
+	<div id="app" class="h-screen w-screen overflow-x-hidden p-4">
+		<div
+			v-if="apiData"
+			class="cardsContainer grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5"
+		>
+			<CloudPackageGroup
+				v-for="cardData in apiData"
+				:key="cardData.id"
+				:api-data="cardData"
+			></CloudPackageGroup>
+			<!-- <CloudPackageGroup :api-data="apiData"></CloudPackageGroup> -->
+		</div>
 	</div>
 </template>
 
@@ -19,7 +29,7 @@ export default {
 		};
 	},
 	mounted: function () {
-		this.apiData = JSON.parse(jsonData);
+		this.apiData = jsonData["data"];
 	}
 };
 </script>

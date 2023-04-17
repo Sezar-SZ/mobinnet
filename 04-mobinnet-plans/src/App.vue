@@ -1,8 +1,8 @@
 <template>
-	<div id="app" class="h-screen w-screen overflow-x-hidden p-4">
+	<div id="app" class="h-screen w-screen overflow-x-hidden">
 		<div
 			v-if="apiData"
-			class="cardsContainer grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5"
+			class="cardsContainer m-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5"
 		>
 			<CloudPackageGroup
 				v-for="cardData in apiData"

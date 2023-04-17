@@ -1,8 +1,13 @@
 <template>
-	<div dir="rtl" class="flex w-[80%] flex-col">
+	<div
+		dir="rtl"
+		class="m-2 mx-auto flex w-[70%] flex-col rounded-sm p-4 shadow-lg"
+	>
 		<img src="../assets/icon.png" />
 		<h1>{{ apiData.packageName }}</h1>
-		<div v-if="isDiscount" class="oldPrice">{{ oldPrice }}</div>
+		<div v-if="isDiscount" class="oldPrice">
+			{{ oldPrice }}
+		</div>
 		<div class="currentPriceContainer flex">
 			<h2>{{ currentPrice }}</h2>
 			<h2>ریال/ماهیانه</h2>
@@ -41,7 +46,7 @@ export default {
 
 	data: function () {
 		return {
-			oldPrice: this.apiData.price
+			oldPriceVal: this.apiData.price
 		};
 	},
 	mounted: function () {
@@ -51,10 +56,15 @@ export default {
 		isDiscount: function () {
 			return this.apiData.discount;
 		},
+		oldPrice: function () {
+			return this.oldPriceVal.toLocaleString();
+		},
 		currentPrice: function () {
-			return this.apiData.discount
-				? this.apiData.price - this.apiData.discount
-				: this.apiData.price;
+			return (
+				this.apiData.discount
+					? this.apiData.price - this.apiData.discount
+					: this.apiData.price
+			).toLocaleString();
 		}
 	}
 };

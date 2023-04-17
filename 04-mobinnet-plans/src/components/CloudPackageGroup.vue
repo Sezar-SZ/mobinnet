@@ -1,9 +1,17 @@
 <template>
 	<div
 		dir="rtl"
-		class="m-2 mx-auto flex w-[80%] flex-col rounded-sm p-6 shadow-lg"
+		class="m-2 mx-auto flex w-[90%] flex-col rounded-sm p-4 shadow-lg"
 	>
-		<img src="../assets/icon.svg" />
+		<div class="relative flex items-center justify-center">
+			<img src="../assets/icon.svg" />
+			<div
+				v-if="isDiscount"
+				class="absolute right-12 top-0 rounded-full border-2 border-green-900 bg-gradient-to-b from-red-600 to-red-400 p-2 text-white"
+			>
+				{{ discountPercent }}
+			</div>
+		</div>
 		<h1 class="mb-4 text-center text-xl font-bold text-green-600">
 			{{ apiData.packageName }}
 		</h1>
@@ -73,6 +81,11 @@ export default {
 					? this.apiData.price - this.apiData.discount
 					: this.apiData.price
 				).toLocaleString()
+			);
+		},
+		discountPercent: function () {
+			return (
+				"%" + englishToFarsi(this.apiData.discountPercent.toString())
 			);
 		}
 	}

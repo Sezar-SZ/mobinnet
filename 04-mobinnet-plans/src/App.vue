@@ -1,16 +1,25 @@
 <template>
 	<div id="app">
-		<HelloWorld></HelloWorld>
+		<div class="cardsContainer"></div>
 	</div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import CloudPackageGroup from "./components/CloudPackageGroup.vue";
+import jsonData from "./assets/data.json";
 
 export default {
 	name: "App",
 	components: {
-		HelloWorld
+		CloudPackageGroup
+	},
+	data: function () {
+		return {
+			apiData: null
+		};
+	},
+	mounted: function () {
+		this.apiData = JSON.parse(jsonData);
 	}
 };
 </script>

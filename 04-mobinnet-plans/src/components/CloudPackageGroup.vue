@@ -2,9 +2,9 @@
 	<div dir="rtl" class="flex w-[80%] flex-col">
 		<img src="../assets/icon.png" />
 		<h1>{{ apiData.packageName }}</h1>
-		<div v-if="isDiscount" class="oldPrice"></div>
+		<div v-if="isDiscount" class="oldPrice">{{ oldPrice }}</div>
 		<div class="currentPriceContainer flex">
-			<h2>{{ oldPrice }}</h2>
+			<h2>{{ currentPrice }}</h2>
 			<h2>ریال/ماهیانه</h2>
 		</div>
 		<div class="infoContainer grid grid-cols-2">

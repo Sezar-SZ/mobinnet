@@ -1,13 +1,22 @@
 <template>
 	<div
 		dir="rtl"
-		class="m-2 mx-auto flex w-[90%] flex-col rounded-sm p-4 shadow-lg"
+		class="relative m-2 mx-auto flex w-[92%] flex-col rounded-lg p-4 shadow-lg"
+		:class="{
+			'border-2 border-green-500': isSelected
+		}"
 	>
-		<div class="relative flex items-center justify-center">
+		<div class="flex items-center justify-center">
+			<div
+				v-if="isSelected"
+				class="absolute left-0 top-0 flex h-[15%] w-[17%] items-center justify-center rounded-md rounded-bl-none rounded-tr-none bg-green-500"
+			>
+				<div class="check"></div>
+			</div>
 			<img src="../assets/icon.svg" />
 			<div
 				v-if="isDiscount"
-				class="absolute right-12 top-0 rounded-full border-2 border-green-900 bg-gradient-to-b from-red-600 to-red-400 p-2 text-white"
+				class="absolute right-12 top-5 rounded-full border-2 border-green-900 bg-gradient-to-b from-red-600 to-red-400 p-2 text-white"
 			>
 				{{ discountPercent }}
 			</div>
@@ -35,12 +44,12 @@
 			</div>
 			<div class="infoGroup flex">
 				<img class="ml-2 w-5" src="../assets/icons/ram.svg" />
-				<span>Ram:</span>
+				<span>RAM:</span>
 				<span>{{ apiData.ramCapcity }} گیگ</span>
 			</div>
 			<div class="infoGroup flex">
 				<img class="ml-2 w-5" src="../assets/icons/cpu.svg" />
-				<span>Cpu:</span>
+				<span>CPU:</span>
 				<span>{{ apiData.cpuCapacity }} هسته</span>
 			</div>
 			<div class="infoGroup flex">
@@ -49,6 +58,13 @@
 				<span>{{ apiData.storageCapacity }} گیگ</span>
 			</div>
 		</div>
+		<button
+			class="relative mt-8 rounded-md bg-gradient-to-l from-green-600 to-green-500 py-2"
+			@click="$emit('select', id)"
+		>
+			انتخاب
+			<span class="check-button absolute right-0 mr-7"></span>
+		</button>
 	</div>
 </template>
 
@@ -57,20 +73,22 @@ import { englishToFarsi } from "../utils.js";
 export default {
 	name: "CloudPackageGroup",
 	props: {
-		apiData: Object
+		apiData: Object,
+		selectedPlanId: Number
 	},
 
 	data: function () {
 		return {
-			oldPriceVal: this.apiData.price
+			oldPriceVal: this.apiData.price,
+			id: parseInt(this.apiData.id, 10)
 		};
-	},
-	mounted: function () {
-		this.packageName = this.apiData.packageName;
 	},
 	computed: {
 		isDiscount: function () {
 			return this.apiData.discount;
+		},
+		isSelected: function () {
+			return this.selectedPlanId === this.id;
 		},
 		oldPrice: function () {
 			return englishToFarsi(this.oldPriceVal.toLocaleString());
@@ -92,4 +110,21 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.check {
+	display: inline-block;
+	transform: rotate(45deg);
+	height: 30px;
+	width: 16px;
+	border-bottom: 7px solid white;
+	border-right: 7px solid white;
+}
+.check-button {
+	display: inline-block;
+	transform: rotate(45deg);
+	height: 17px;
+	width: 10px;
+	border-bottom: 3px solid white;
+	border-right: 3px solid white;
+}
+</style>

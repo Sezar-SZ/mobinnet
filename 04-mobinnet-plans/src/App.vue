@@ -8,6 +8,8 @@
 				v-for="cardData in apiData"
 				:key="cardData.id"
 				:api-data="cardData"
+				:selected-plan-id="selectedPlanId"
+				@select="selectedPlanId = $event"
 			></CloudPackageGroup>
 			<!-- <CloudPackageGroup :api-data="apiData"></CloudPackageGroup> -->
 		</div>
@@ -25,7 +27,8 @@ export default {
 	},
 	data: function () {
 		return {
-			apiData: null
+			apiData: null,
+			selectedPlanId: null
 		};
 	},
 	mounted: function () {

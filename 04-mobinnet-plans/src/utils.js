@@ -16,5 +16,3 @@ export function englishToFarsi(inp) {
 		.map((el) => (Object.hasOwn(values, el) ? values[el] : el))
 		.join("");
 }
-
-console.log(englishToFarsi("123 hi 21"));

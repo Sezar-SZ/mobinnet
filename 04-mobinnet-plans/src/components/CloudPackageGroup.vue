@@ -58,8 +58,13 @@
 				<span>{{ apiData.storageCapacity }} گیگ</span>
 			</div>
 		</div>
+		<select name="duration" id="duration" class="mt-8 rounded-md p-3">
+			<option value="1month">۱ ماهه</option>
+			<option value="1month">۳ ماهه</option>
+			<option value="1month">۶ ماهه</option>
+		</select>
 		<button
-			class="relative mt-8 rounded-md bg-gradient-to-l from-green-600 to-green-500 py-2"
+			class="relative my-4 rounded-3xl bg-gradient-to-l from-green-600 to-green-500 py-3"
 			@click="$emit('select', id)"
 		>
 			انتخاب

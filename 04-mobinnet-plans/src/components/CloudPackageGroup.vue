@@ -1,7 +1,7 @@
 <template>
 	<div
 		dir="rtl"
-		class="relative m-2 mx-auto flex w-[92%] flex-col rounded-lg p-4 shadow-lg"
+		class="relative m-2 mx-auto flex w-[92%] flex-col rounded-lg p-4 shadow-lg dark:bg-[#272727]"
 		:class="{
 			'border-2 border-green-500': isSelected
 		}"
@@ -31,34 +31,46 @@
 			{{ oldPrice }}
 		</div>
 		<div
-			class="currentPriceContainer flex w-full items-center justify-between"
+			class="currentPriceContainer flex w-full items-center justify-between dark:text-white"
 		>
 			<h2 class="mb-4 text-3xl">{{ currentPrice }}</h2>
-			<h2 class="text-gray-600">ریال/ماهیانه</h2>
+			<h2 class="text-gray-600 dark:text-white">ریال/ماهیانه</h2>
 		</div>
 		<div class="infoContainer grid grid-cols-2 gap-y-3">
 			<div class="infoGroup flex">
 				<img class="ml-2 w-5" src="../assets/icons/cpu.svg" />
-				<span>Traffic:</span>
-				<span>{{ apiData.trafficCapacity }}</span>
+				<span class="dark:text-white">Traffic:</span>
+				<span class="dark:text-green-400">{{
+					apiData.trafficCapacity
+				}}</span>
 			</div>
 			<div class="infoGroup flex">
 				<img class="ml-2 w-5" src="../assets/icons/ram.svg" />
-				<span>RAM:</span>
-				<span>{{ apiData.ramCapcity }} گیگ</span>
+				<span class="dark:text-white">RAM:</span>
+				<span class="dark:text-green-400"
+					>{{ apiData.ramCapcity }} گیگ</span
+				>
 			</div>
 			<div class="infoGroup flex">
 				<img class="ml-2 w-5" src="../assets/icons/cpu.svg" />
-				<span>CPU:</span>
-				<span>{{ apiData.cpuCapacity }} هسته</span>
+				<span class="dark:text-white">CPU:</span>
+				<span class="dark:text-green-400"
+					>{{ apiData.cpuCapacity }} هسته</span
+				>
 			</div>
 			<div class="infoGroup flex">
 				<img class="ml-2 w-5" src="../assets/icons/cpu.svg" />
-				<span>SSD:</span>
-				<span>{{ apiData.storageCapacity }} گیگ</span>
+				<span class="dark:text-white">SSD:</span>
+				<span class="dark:text-green-400"
+					>{{ apiData.storageCapacity }} گیگ</span
+				>
 			</div>
 		</div>
-		<select name="duration" id="duration" class="mt-8 rounded-md p-3">
+		<select
+			name="duration"
+			id="duration"
+			class="mt-8 rounded-md p-3 dark:bg-black dark:text-white"
+		>
 			<option value="1month">۱ ماهه</option>
 			<option value="1month">۳ ماهه</option>
 			<option value="1month">۶ ماهه</option>

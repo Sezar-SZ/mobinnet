@@ -5,7 +5,7 @@
 	>
 		<div
 			v-if="apiData"
-			class="cardsContainer m-2 grid grid-cols-1 gap-y-14 md:grid-cols-2 lg:grid-cols-4"
+			class="cardsContainer m-2 grid grid-cols-1 gap-y-14 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
 		>
 			<CloudPackageGroup
 				v-for="cardData in apiData"

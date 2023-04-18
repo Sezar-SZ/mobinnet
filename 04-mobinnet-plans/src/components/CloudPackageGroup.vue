@@ -9,7 +9,7 @@
 		<div class="flex items-center justify-center">
 			<div
 				v-if="isSelected"
-				class="absolute left-0 top-0 flex h-[15%] w-[17%] items-center justify-center rounded-md rounded-bl-none rounded-tr-none bg-green-500"
+				class="absolute left-0 top-0 flex h-[13%] max-h-[70px] w-[17%] max-w-[60px] items-center justify-center rounded-md rounded-bl-none rounded-tr-none bg-green-500"
 			>
 				<div class="check"></div>
 			</div>
@@ -25,8 +25,8 @@
 			{{ apiData.packageName }}
 		</h1>
 		<div
-			v-if="isDiscount"
 			class="oldPrice over text-xl text-red-500 line-through"
+			:class="{ invisible: !isDiscount }"
 		>
 			{{ oldPrice }}
 		</div>
@@ -34,36 +34,41 @@
 			class="currentPriceContainer flex w-full items-center justify-between dark:text-white"
 		>
 			<h2 class="mb-4 text-3xl">{{ currentPrice }}</h2>
-			<h2 class="text-gray-600 dark:text-white">ریال/ماهیانه</h2>
+			<h2 class="w-[30%] text-gray-600 dark:text-white">ریال/ماهیانه</h2>
 		</div>
-		<div class="infoContainer grid grid-cols-2 gap-y-3">
-			<div class="infoGroup flex">
-				<img class="ml-2 w-5" src="../assets/icons/cpu.svg" />
-				<span class="dark:text-white">Traffic:</span>
-				<span class="dark:text-green-400">{{
-					apiData.trafficCapacity
-				}}</span>
+		<div class="infoContainer mb-4 flex flex-col">
+			<div class="row mb-4 flex items-center justify-between">
+				<div class="infoGroup flex">
+					<img class="ml-2 w-5" src="../assets/icons/cpu.svg" />
+					<span class="dark:text-white">Traffic:</span>
+					<span class="dark:text-green-400">{{
+						apiData.trafficCapacity
+					}}</span>
+				</div>
+
+				<div class="infoGroup flex">
+					<img class="ml-2 w-5" src="../assets/icons/ram.svg" />
+					<span class="dark:text-white">RAM:</span>
+					<span class="dark:text-green-400"
+						>{{ apiData.ramCapcity }} گیگ</span
+					>
+				</div>
 			</div>
-			<div class="infoGroup flex">
-				<img class="ml-2 w-5" src="../assets/icons/ram.svg" />
-				<span class="dark:text-white">RAM:</span>
-				<span class="dark:text-green-400"
-					>{{ apiData.ramCapcity }} گیگ</span
-				>
-			</div>
-			<div class="infoGroup flex">
-				<img class="ml-2 w-5" src="../assets/icons/cpu.svg" />
-				<span class="dark:text-white">CPU:</span>
-				<span class="dark:text-green-400"
-					>{{ apiData.cpuCapacity }} هسته</span
-				>
-			</div>
-			<div class="infoGroup flex">
-				<img class="ml-2 w-5" src="../assets/icons/cpu.svg" />
-				<span class="dark:text-white">SSD:</span>
-				<span class="dark:text-green-400"
-					>{{ apiData.storageCapacity }} گیگ</span
-				>
+			<div class="row flex items-center justify-between">
+				<div class="infoGroup flex">
+					<img class="ml-2 w-5" src="../assets/icons/cpu.svg" />
+					<span class="dark:text-white">CPU:</span>
+					<span class="dark:text-green-400"
+						>{{ apiData.cpuCapacity }} هسته</span
+					>
+				</div>
+				<div class="infoGroup flex">
+					<img class="ml-2 w-5" src="../assets/icons/cpu.svg" />
+					<span class="dark:text-white">SSD:</span>
+					<span class="dark:text-green-400"
+						>{{ apiData.storageCapacity }} گیگ</span
+					>
+				</div>
 			</div>
 		</div>
 		<select
@@ -76,7 +81,7 @@
 			<option value="1month">۶ ماهه</option>
 		</select>
 		<button
-			class="relative my-4 rounded-3xl bg-gradient-to-l from-green-600 to-green-500 py-3"
+			class="relative my-4 rounded-3xl bg-gradient-to-l from-green-600 to-green-500 py-3 font-bold text-white"
 			@click="$emit('select', id)"
 		>
 			انتخاب

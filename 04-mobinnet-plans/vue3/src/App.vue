@@ -5,7 +5,7 @@ import jsonData from "./assets/data.json";
 import { Data } from "./types";
 
 const apiData = ref<null | Data[]>(null);
-const selectedPlanId = ref<null | string>("103");
+const selectedPlanId = ref<null | string>(null);
 
 onMounted(() => {
     apiData.value = jsonData.data as Data[];

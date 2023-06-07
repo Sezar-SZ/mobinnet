@@ -1,0 +1,17 @@
+.check {
+    display: inline-block;
+    transform: rotate(45deg);
+    height: 30px;
+    width: 16px;
+    border-bottom: 7px solid white;
+    border-right: 7px solid white;
+}
+
+.check-button {
+    display: inline-block;
+    transform: rotate(45deg);
+    height: 17px;
+    width: 10px;
+    border-bottom: 3px solid white;
+    border-right: 3px solid white;
+}
